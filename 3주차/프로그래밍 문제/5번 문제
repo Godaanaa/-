@@ -1,0 +1,13 @@
+public class AAA {
+	public static void main(String[] args) {
+		int maxLength = 20;
+		for (int a = 1; a <= maxLength / 2; a++) {
+			for (int b = a; b <= maxLength / 2; b++) {
+				int c = maxLength - a - b;
+				if (a * a + b * b == c * c) {
+					System.out.printf("변의 길이: %d, %d, %d\n", a, b, c);
+				}
+			}
+		}
+	}
+}
