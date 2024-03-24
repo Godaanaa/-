@@ -3,20 +3,19 @@ import java.util.Scanner;
 public class AAA {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		System.out.println("철수와 영희의 가위바위보 게임을 시작합니다.");
-		System.out.print("철수의 선택을 입력하세요 (r: 바위, p: 보, s: 가위): ");
+		System.out.print("철수 : ");
 		char a = in.next().charAt(0);
-		System.out.print("영희의 선택을 입력하세요 (r: 바위, p: 보, s: 가위): ");
+		System.out.print("영희 : ");
 		char b = in.next().charAt(0);
 		if (a == b) {
-			System.out.println("무승부입니다.");
+			System.out.println("무승부.");
 		}
 		else if ((a == 'r' && b == 's') || (a == 's' && b == 'p')
 				|| (a == 'p' && b == 'r')) {
-			System.out.println("철수가 이겼습니다.");
+			System.out.println("철수, 승!");
 		}
 		else {
-			System.out.println("영희가 이겼습니다.");
+			System.out.println("영희, 승!");
 		}
 	}
 }
