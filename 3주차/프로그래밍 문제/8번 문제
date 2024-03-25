@@ -1,0 +1,15 @@
+public class AAA {
+	public static void main(String[] args) {
+		System.out.println(factorial(5));
+	}
+	static int factorial(int n) {
+		return switch (n) {
+		case 0, 1 -> 1;
+		case 2 -> 2;
+		case 3 -> 6;
+		case 4 -> 24;
+		case 5 -> 120;
+		default -> throw new IllegalArgumentException(" ");
+		};
+	}
+}
