@@ -1,0 +1,22 @@
+public class AAA {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		String c = input("철수", in);
+		String y = input("영희", in);
+		whoswin(c, y);
+	}
+	public static String input(String a, Scanner in) {
+		System.out.print(a + " : ");
+		return in.next();
+	}
+	public static void whoswin(String b, String c) {
+		if (b.equals(c)) {
+			System.out.println("무승부.");
+		} else if ((b.equals("r") && c.equals("s")) || (b.equals("s") && c.equals("p"))
+				|| (b.equals("p") && c.equals("r"))) {
+			System.out.println("철수, 승!");
+		} else {
+			System.out.println("영희, 승!");
+		}
+	}
+}
