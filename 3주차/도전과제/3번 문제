@@ -1,0 +1,23 @@
+public class AAA {
+	public static void main(String[] args) {
+		System.out.println(factorial(5));
+		System.out.println(factorial(1, 5));
+		System.out.println(factorial(3, 5));
+		System.out.println(factorial(10, 5));
+	}
+	static int factorial(int x) {
+		int r = 1;
+		while (x > 1) {
+			r *= x;
+			x--;
+		}
+		return r;
+	}
+	static int factorial(int start, int end) {
+		int r = 1;
+		for (int i = start; i <= end; i++) {
+			r *= i;
+		}
+		return r;
+	}
+}
