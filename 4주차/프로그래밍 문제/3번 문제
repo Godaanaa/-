@@ -1,0 +1,38 @@
+public class Member {
+	private String Name, Id, PassWord;
+	private int age;
+	String getName() {
+		return Name;
+	}
+	String getId() {
+		return Id;
+	}
+	String getPassword() {
+		return PassWord;
+	}
+	int getage() {
+		return age;
+	}
+	void setMember(String Name, String Id, String PassWord, int age) {
+		this.Name = Name;
+		this.Id = Id;
+		this.PassWord = PassWord;
+		this.age = age;
+	}
+	public Member(String Name, String Id, String PassWord, int age) {
+		this.Name = Name;
+		this.Id = Id;
+		this.PassWord = PassWord;
+		this.age = age;
+	}
+}
+public class MemberTest {
+	public static void main(String[] args) {
+		Member sMember = new Member("박정현", "pch456", "1598", 37);
+		System.out.printf("%s\t%s\t%s\t%d\n", sMember.getName(), sMember.getId(), sMember.getPassword(),
+				sMember.getage());
+		sMember.setMember("김민석", "kms123", "1234", 21);
+		System.out.printf("%s\t%s\t%s\t%d\n", sMember.getName(), sMember.getId(), sMember.getPassword(),
+				sMember.getage());
+	}
+}
