@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class DayTest {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("요일을 입력하세요: ");
+        String inputDay = scanner.nextLine().toUpperCase(); // 대문자로 변환하여 입력 받음
+
+        printPreference(inputDay);
+    }
+
+    public static void printPreference(String day) {
+        String preference = switch (day) {
+            case "MONDAY" -> "싫다.";
+            case "FRIDAY" -> "좋다.";
+            case "SATURDAY", "SUNDAY" -> "최고";
+            default -> "그저 그렇다.";
+        };
+
+        System.out.println(day + "은 " + preference);
+    }
+}
