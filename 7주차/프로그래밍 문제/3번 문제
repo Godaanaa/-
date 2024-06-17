@@ -1,0 +1,38 @@
+public class BookPriceTest {
+    public static void main(String[] args) {
+        Book[] books = { new Book(15000), new Book(50000), new Book(20000)};
+
+        System.out.println("정렬 전");
+        for (Book i : books) {
+            i.BookPrice();
+        }
+        Arrays.sort(books);
+        System.out.println("정렬 후");
+        for (Book i : books) {
+            i.BookPrice();
+        }
+    }
+}
+
+public class Book implements Comparable<Object> {
+	int price;
+
+	Book(int price) {
+		this.price = price;
+	}
+
+	void BookPrice() {
+		System.out.println("Book [price=" + price + "]");
+	}
+
+	@Override
+	public int compareTo(Object o) { // Object o 인수값 즉 넘어온 객체
+		Book book = (Book) o; // Book 타입으로 형변환
+
+		// return값이 -1과 0이면 객체자리유지, 1이면 두 객체의 자리 변경
+		if (this.price <= book.price)
+			return -1;
+		else
+			return 1;
+	}
+}
