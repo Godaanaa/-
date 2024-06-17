@@ -1,0 +1,42 @@
+public class Car {
+    private final String model;
+
+    public Car (String model){
+        this.model = model;
+    }
+    public String toString() {
+        return model;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        // 가장 먼저 ==연산자를 이용해 equals 인자가 자기 자신인지 검사해라
+        if (this == obj) return true;
+        // instanceof 연산자를 사용하여 인자의 자료형이 정확한지 검사
+        if (!(obj instanceof Car)) return false;
+        // equals의 인자를 정확한 자료형으로 변환
+        Car confignation = (Car) obj;
+        // 필드 값이 인자로 주어진 객체의 해당 필드와 일치하는지 확인
+       return model.equals(confignation.model);
+    }
+}
+
+public class CarTest {
+    public static void main(String[] args) {
+        Car myCar = new Car("그랜저");
+        Car yourCar = new Car("그랜저");
+
+        Calendar cal = Calendar.getInstance();
+        Date specificTime = cal.getTime();
+
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+        String dateGab = sdf.format(specificTime);
+
+        String msf2 = MessageFormat.format("날짜: {1}, 자동차 모델={0}, 운전자(홍길동)", myCar.toString(), dateGab);
+        StringTokenizer st2 = new StringTokenizer(msf2, " ,=()");
+
+        while (st2.hasMoreTokens()) {
+            System.out.println(st2.nextToken());
+        }
+    }
+}
