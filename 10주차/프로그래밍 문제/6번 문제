@@ -1,0 +1,32 @@
+public class Animal {
+	public void sound() {
+		System.out.println("ㅁㅁㄲㄲ ...");
+	}
+}
+
+public class Dog extends Animal {
+	public void sound() {
+		System.out.println("멍멍");
+	}
+}
+
+import java.util.function.Supplier;
+
+public class AnimalTest {
+	public static void soundAnimal(Supplier<Animal> s) {
+		s.get().sound();
+	}
+    
+	public static void main(String[] args) {
+		Animal[] animalsList = { new Animal(), new Dog() };
+		for (Animal animal : animalsList) {
+			Supplier<Animal> dSupplier3 = () -> animal;
+			soundAnimal(dSupplier3);
+		}
+//		for (int i = 0; i < animalsList.length; i++) {
+//		   람다식을 쓸 때 지역변수는 final 취급하기 때문에 값이 변하면 안된다.
+//		   Supplier<Animal> dSupplier = () -> animalsList[i];
+//		    soundAnimal(dSupplier);
+//		}
+	}
+}
